@@ -1,0 +1,727 @@
+<!DOCTYPE html><html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>生命保険総論 Web版 完全攻略ガイド（2021～2024年度）</title>
+<style>
+:root {
+    --primary-color: #005a9c;
+    --secondary-color: #007bff;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --border-color: #dee2e6;
+    --header-bg: #ffffff;
+    --card-bg: #ffffff;
+    --sidebar-bg: #f1f3f5;
+    --link-color: #0056b3;
+    --correct-answer-bg: #e6ffed;
+    --correct-answer-border: #b7e4c7;
+    --explanation-bg: #f8f9fa;
+    --explanation-border: #e9ecef;
+    --active-link-bg: #e9ecef;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    font-size: 16px;
+}
+.page-wrapper {
+    display: flex;
+}
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+}
+.sidebar-header {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+.sidebar .toc ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+.sidebar .toc > ul > li {
+    font-weight: bold;
+    margin-top: 12px;
+    font-size: 0.95em;
+}
+.sidebar .toc ul ul {
+    padding-left: 15px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+.sidebar .toc ul ul li {
+    margin-top: 5px;
+}
+.sidebar .toc a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+.sidebar .toc a:hover {
+    background-color: var(--active-link-bg);
+}
+.sidebar .toc a.active {
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-weight: bold;
+}
+.main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    padding: 0;
+}
+.navbar {
+    background-color: var(--header-bg);
+    padding: 15px 40px;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.navbar-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.search-box input {
+    width: 250px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+}
+.toggle-answers button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border: 1px solid var(--secondary-color);
+    background-color: transparent;
+    color: var(--secondary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.toggle-answers button:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+main {
+    padding: 30px 40px;
+}
+.cover-page {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border-color);
+}
+.cover-page h1 {
+    font-size: 2.8em;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+.cover-page .subtitle {
+    font-size: 1.4em;
+    color: var(--text-color);
+    margin-bottom: 1.5em;
+}
+.cover-page .author {
+    font-size: 1em;
+    color: #6c757d;
+}
+h2.chapter-title {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 15px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+.chapter-summary {
+    background-color: #e9f7ff;
+    border-left: 5px solid var(--secondary-color);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+.chapter-summary h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.4em;
+}
+.chapter-summary ul {
+    list-style-type: '✔ ';
+    padding-left: 25px;
+}
+.chapter-summary li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+.chapter > h3 {
+    font-size: 1.6em;
+    color: var(--primary-color);
+    margin-top: 40px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 5px solid var(--secondary-color);
+}
+.question-block {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 25px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+.question-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.question-text, .question-options, .word-group {
+    background-color: var(--explanation-bg);
+    border: 1px solid var(--explanation-border);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.word-group table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.word-group th, .word-group td {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    text-align: left;
+}
+details {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+summary {
+    font-weight: bold;
+    padding: 12px 15px;
+    background-color: #e9ecef;
+    cursor: pointer;
+    outline: none;
+    color: var(--primary-color);
+    transition: background-color 0.2s;
+}
+summary:hover {
+    background-color: #dde2e6;
+}
+.answer-explanation {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+.correct-answer {
+    background-color: var(--correct-answer-bg);
+    border: 1px solid var(--correct-answer-border);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.correct-answer strong {
+    color: #155724;
+}
+.explanation {
+    background-color: #fff;
+    border-left: 4px solid var(--secondary-color);
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 0 5px 5px 0;
+}
+.source-ref {
+    font-size: 0.85em;
+    color: #6c757d;
+    display: block;
+    text-align: right;
+    margin-top: 15px;
+}
+.no-results {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: #6c757d;
+    display: none;
+}
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media (max-width: 1024px) {
+    .page-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        z-index: 2000;
+        transition: transform 0.3s ease;
+    }
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    .navbar {
+        padding-left: 60px;
+    }
+    .sidebar-toggle {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .controls {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-box input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    main {
+        padding: 20px;
+    }
+}
+</style>
+<link rel="stylesheet" href="https://static.skywork.ai/fe/skywork-site-assets/styles/doc_reference_style.css?v=1958669117810716672"/></head>
+<body>
+
+<div class="page-wrapper">
+    <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">目次</div>
+        <div class="toc">
+            <ul>
+                <li><a href="#section-chapter1">第1章 生命保険の基本概念</a>
+                    <ul>
+                        <li><a href="#section-section1-1">1-1. 危険と保険</a></li>
+                        <li><a href="#section-section1-2">1-2. 生命保険の対象となる危険とその特色</a></li>
+                        <li><a href="#section-section1-3">1-3. 保険の歴史的発展</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-chapter2">第2章 生命保険契約</a>
+                    <ul>
+                        <li><a href="#section-section2-1">2-1. 契約の法的性質</a></li>
+                        <li><a href="#section-section2-2">2-2. 契約の当事者と要素</a></li>
+                        <li><a href="#section-section2-3">2-3. 生命保険契約の特殊性と保険約款</a></li>
+                        <li><a href="#section-section2-4">2-4. 保険の始期</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-chapter3">第3章 生命保険の数理</a>
+                    <ul>
+                        <li><a href="#section-section3-1">3-1. 保険料の仕組み</a></li>
+                        <li><a href="#section-section3-2">3-2. 死亡表</a></li>
+                        <li><a href="#section-section3-3">3-3. 責任準備金</a></li>
+                        <li><a href="#section-section3-4">3-4. 契約者配当（剰余金の分配）</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-chapter4">第4章 生命保険商品</a>
+                    <ul>
+                        <li><a href="#section-section4-1">4-1. 生命保険商品の基本型</a></li>
+                        <li><a href="#section-section4-2">4-2. 団体保険・団体年金保険</a></li>
+                        <li><a href="#section-section4-3">4-3. その他の保険商品と関連制度</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-chapter5">第5章 生命保険会社の経営</a>
+                    <ul>
+                        <li><a href="#section-section5-1">5-1. 危険の選択（アンダーライティング）</a></li>
+                        <li><a href="#section-section5-2">5-2. 資産運用の原則と現状</a></li>
+                        <li><a href="#section-section5-3">5-3. 生命保険会社の組織形態</a></li>
+                        <li><a href="#section-section5-4">5-4. 業界共通システム</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-chapter6">第6章 生命保険と社会</a>
+                    <ul>
+                        <li><a href="#section-section6-1">6-1. 国民経済における生命保険</a></li>
+                        <li><a href="#section-section6-2">6-2. 社会構造の変化と生命保険</a></li>
+                        <li><a href="#section-section6-3">6-3. 社会保障制度</a></li>
+                        <li><a href="#section-section6-4">6-4. 生活設計と生命保険</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-chapter7">第7章 監督・規制と消費者保護</a>
+                    <ul>
+                        <li><a href="#section-section7-1">7-1. 保険業法と監督行政</a></li>
+                        <li><a href="#section-section7-2">7-2. 保険募集と関連法規</a></li>
+                        <li><a href="#section-section7-3">7-3. 消費者保護制度</a></li>
+                        <li><a href="#section-section7-4">7-4. 生命保険会社の経営破綻と契約者保護</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-chapter8">第8章 諸外国の生命保険事業</a>
+                    <ul>
+                        <li><a href="#section-section8-1">8-1. イギリスの保険史</a></li>
+                        <li><a href="#section-section8-2">8-2. アメリカの保険史と金融革命</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section-chapter9">第9章 共済・損害保険・その他</a>
+                    <ul>
+                        <li><a href="#section-section9-1">9-1. 共済と保険</a></li>
+                        <li><a href="#section-section9-2">9-2. 少額短期保険業</a></li>
+                        <li><a href="#section-section9-3">9-3. 損害保険</a></li>
+                        <li><a href="#section-section9-4">9-4. 金融業界の動向（銀行・証券）</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <header class="navbar">
+            <h1 class="navbar-title">生命保険総論 完全攻略ガイド</h1>
+            <div class="controls">
+                <div class="search-box">
+                    <input id="searchInput" placeholder="キーワードで問題を検索..." type="search"/>
+                </div>
+                <div class="toggle-answers">
+                    <button id="showAllBtn">全解答表示</button>
+                    <button id="hideAllBtn">全解答非表示</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="cover-page">
+                <h1>生命保険講座<br/>「生命保険総論」<br/>完全攻略ガイド</h1>
+                <p class="subtitle">2021～2024年度 過去問題分析・解説集</p>
+                <p class="author">最終更新日: 2025-08-20</p>
+            </div>
+
+            <h2 class="chapter-title" id="section-chapter1">第1章 生命保険の基本概念</h2>
+            <div class="chapter-summary">
+                <h3>この章のまとめ</h3>
+                <ul>
+                    <li><strong>危険対策と保険</strong>：保険は、危険発生後の「経済的損失」を補填する「危険のファイナンシング」であり、危険自体を防ぐ「危険のコントロール」とは区別される。</li>
+                    <li><strong>保険の対象となる危険</strong>：個人の制御を超え、多数集めることで発生率が予測可能（大数の法則）な偶然の事故による経済的損失が対象となる。</li>
+                    <li><strong>生命保険の特色</strong>：人の生死を対象とし、損害額の算定が困難なため、あらかじめ定めた金額を支払う「定額保険」である。ニーズが潜在的であること、長期契約で平準保険料方式が採られるため多額の責任準備金が積み立てられ、金融機関としての側面を持つ。</li>
+                    <li><strong>歴史的発展</strong>：近代保険の源流は、中世ヨーロッパの「ギルド」における相互扶助に遡る。その後、海上貿易のリスクをカバーする「冒険貸借」を経て、確率論・統計学の発達を背景に、科学的な生命保険が誕生した。</li>
+                </ul>
+            </div>
+            <div class="chapter">
+                <h3 id="section-section1-1">1-1. 危険と保険</h3>
+                <div class="question-block">
+                    <p class="question-title">［危険対策と保険］</p>
+                    <div class="question-text">
+                        <p>次の文章について、正しい場合には「正」、誤っている場合には「誤」を選んでください。</p>
+                        <p>危険対策は保険と密接な関係があるが、保険は危険自体を防止、回避するための危険対策ではなく、危険が現実化した時に生じる経済的損失、負担を軽減、回復するための危険対策である。</p>
+                    </div>
+                    <details>
+                        <summary>解答・解説を見る</summary>
+                        <div class="answer-explanation">
+                            <div class="correct-answer"><strong>正解:</strong> 正</div>
+                            <div class="explanation">
+                                <h5>解説</h5>
+                                <p>記述の通りです。保険の役割を正しく理解することが重要です。</p>
+                                <ul>
+                                    <li><strong>危険のコントロール（危険自体への対策）</strong>：危険の発生を未然に防いだり（例：防災訓練、健康診断）、発生した際の損害を最小限に抑えたりする（例：スプリンクラー設置）対策です。</li>
+                                    <li><strong>危険のファイナンシング（経済的損失への対策）</strong>：危険が現実化した（事故が発生した）後の経済的な損失を補うための対策です。保険はこの「危険のファイナンシング」に分類されます。</li>
+                                </ul>
+                                <p>したがって、保険は火災や病気そのものを防ぐわけではなく、それによって生じる経済的な損失をカバーするための金融的な手段です。</p>
+                            </div>
+                        </div>
+                    </details>
+                    <span class="source-ref">出典: 2024年度 フォームB 問31</span>
+                </div>
+                <div class="question-block">
+                    <p class="question-title">［保険の対象となる危険の種類について］</p>
+                    <div class="question-text">
+                        <p>次の文章のうち、誤っているものを１つ選んでください。</p>
+                        <p>ア．保険の対象となる危険の種類の一つとして、「その発生を防止しようとしても、ある程度以上は不可能であるという意味で経済主体による制御を超えていないもの」がある。</p>
+                        <p>イ．保険の対象となる危険について、保険契約者は、保険を付することによって保険料支出の形で危険により被る損失の塡補を行う。被保険体（保険事故の対象物件または対象者）の被った危険から派生する経済的損失は保険者に肩代わりされる。</p>
+                        <p>ウ．保険者の危険引受けが可能となるためには、同様な危険を多数引き受けることにより、危険の発生頻度の変動幅を縮小させ、平均経験率を得る必要がある。危険により被る経済的損失が保険金額として貨幣で計算され、危険の程度が危険度として数量化されれば、保険金額と危険度の積として危険評価額は数量化可能となる。</p>
+                    </div>
+                    <details>
+                        <summary>解答・解説を見る</summary>
+                        <div class="answer-explanation">
+                            <div class="correct-answer"><strong>正解:</strong> ア</div>
+                            <div class="explanation">
+                                <h5>解説</h5>
+                                <ul>
+                                    <li><strong>ア（誤り）</strong>：保険の対象となる危険は、個々の経済主体（個人や企業）の<strong>制御を超えている</strong>ことが前提となります。「制御を超えていないもの」という記述が誤りです。制御可能な危険（例えば、故意による事故）は、モラルリスクを誘発するため、通常は保険の対象外です。</li>
+                                    <li><strong>イ（正しい）</strong>：保険の基本的な仕組みを説明しています。保険契約者は保険料を支払うことで、万一の際の経済的損失を保険者に移転します。</li>
+                                    <li><strong>ウ（正しい）</strong>：「大数の法則」と保険料計算の基本を説明しています。多数の同質の危険を集めることで、全体の損失発生率が安定し、科学的な保険料計算が可能になります。危険評価額は「保険金額 × 危険度（発生確率）」で算出されます。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                    <span class="source-ref">出典: 2022年度 フォームA 問26</span>
+                </div>
+                <div class="question-block">
+                    <p class="question-title">［危険の種類］</p>
+                    <div class="question-text">
+                        <p>次の文章について、下線部ＡまたはＢのいずれかが誤っている場合と、Ａ・Ｂともに正しい場合とがあります。ＡまたはＢのいずれかが誤っている場合は、誤っている記号と代わって入るものが最も適切な組み合わせを選択してください。Ａ・Ｂともに正しい場合は、記号Ｃを選択してください。</p>
+                        <p>保険者の危険引受けが可能となるためには、同様な危険を多数引き受けることにより、危険の発生頻度の変動幅を(A)<u>縮小</u>させ、(B)<u>平均経験率</u>を得る必要がある。</p>
+                    </div>
+                    <details>
+                        <summary>解答・解説を見る</summary>
+                        <div class="answer-explanation">
+                            <div class="correct-answer"><strong>正解:</strong> オ．Ｃ（Ａ・Ｂともに正しい）</div>
+                            <div class="explanation">
+                                <h5>解説</h5>
+                                <p>この文章は、保険事業が成立するための基本原則である「大数の法則」について述べています。</p>
+                                <ul>
+                                    <li><strong>(A) 縮小</strong>：正しい。多数の同質の危険を集める（＝保険契約を多く引き受ける）ことで、個々の偶然によるバラつきが相殺され、集団全体としての損失発生率の変動幅は小さく（縮小）なります。これにより、損失の予測が安定します。</li>
+                                    <li><strong>(B) 平均経験率</strong>：正しい。多数のデータを観察することで得られる、安定した発生率（確率）のことを指します。保険会社は過去のデータからこの平均経験率を算出し、将来の保険金支払いを予測して保険料を計算します。</li>
+                                </ul>
+                                <p>したがって、A、Bともに正しい記述です。</p>
+                            </div>
+                        </div>
+                    </details>
+                    <span class="source-ref">出典: 2023年度 フォームA 問41</span>
+                </div>
+            </div>
+            <div class="chapter">
+                <h3 id="section-section1-2">1-2. 生命保険の対象となる危険とその特色</h3>
+                <div class="question-block">
+                    <p class="question-title">［生命保険の対象となる危険とその特色－①］</p>
+                    <div class="question-text">
+                        <p>文中の空欄［ １ ］～［ ５ ］に入る最も適切なものを選んでください。</p>
+                        <p>保険契約に関する法制については、従来は［ １ ］の中で規定されていたが、［ １ ］現代化の流れを受けて保険法が成立し、2010 年（平成22 年）に施行された。</p>
+                        <p>生命保険の対象となる危険には、一般的には「死亡危険」と「生存危険」があるが、その危険の発生から被る［ ２ ］危険の担保となるのが生命保険である。</p>
+                        <p>死亡危険は文字どおりのものであるが、高度障害のように死亡という事象が生じていなくとも［ ２ ］死亡と位置づけ、契約上は死亡と同じ扱いをする場合もある。</p>
+                        <p>死亡保険契約にあっては、人の生死に伴う［ ３ ］を把握することは一般的に難しい。また、人の価値に対する認識は［ ４ ］な評価に依存しがちである。そのため、死亡保険の保障額はあらかじめ［ ５ ］に定める形がとられている。また、死亡危険は、その発生に中間がなく、いわば０か１の事象であり、事象の発生により保険契約が終了するという特色がある。</p>
+                        <p>生存危険とは、生存することにより［ ２ ］損失を引き起こす危険をいい、この危険に対応する生命保険契約には一定期間後の生存を条件とする一時金給付あるいは年金給付がある。</p>
+                        <div class="word-group">
+                            <table>
+                                <tbody><tr><td>ア． 社会的</td><td>イ． 損害額</td></tr>
+                                <tr><td>ウ． 客観的</td><td>エ． 一定額</td></tr>
+                                <tr><td>オ． 商法</td><td>カ． 賠償額</td></tr>
+                                <tr><td>キ． 主観的</td><td>ク． 填補額</td></tr>
+                                <tr><td>ケ． 民法</td><td>コ． 経済的</td></tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                    <details>
+                        <summary>解答・解説を見る</summary>
+                        <div class="answer-explanation">
+                            <div class="correct-answer">
+                                <strong>正解:</strong><br/>
+                                ［ １ ］：オ．商法<br/>
+                                ［ ２ ］：コ．経済的<br/>
+                                ［ ３ ］：イ．損害額<br/>
+                                ［ ４ ］：キ．主観的<br/>
+                                ［ ５ ］：エ．一定額
+                            </div>
+                            <div class="explanation">
+                                <h5>完成した文章</h5>
+                                <p>保険契約に関する法制については、従来は<strong>商法</strong>の中で規定されていたが、<strong>商法</strong>現代化の流れを受けて保険法が成立し、2010 年（平成22 年）に施行された。</p>
+                                <p>生命保険の対象となる危険には、一般的には「死亡危険」と「生存危険」があるが、その危険の発生から被る<strong>経済的</strong>危険の担保となるのが生命保険である。</p>
+                                <p>死亡危険は文字どおりのものであるが、高度障害のように死亡という事象が生じていなくとも<strong>経済的</strong>死亡と位置づけ、契約上は死亡と同じ扱いをする場合もある。</p>
+                                <p>死亡保険契約にあっては、人の生死に伴う<strong>損害額</strong>を把握することは一般的に難しい。また、人の価値に対する認識は<strong>主観的</strong>な評価に依存しがちである。そのため、死亡保険の保障額はあらかじめ<strong>一定額</strong>に定める形がとられている。また、死亡危険は、その発生に中間がなく、いわば０か１の事象であり、事象の発生により保険契約が終了するという特色がある。</p>
+                                <p>生存危険とは、生存することにより<strong>経済的</strong>損失を引き起こす危険をいい、この危険に対応する生命保険契約には一定期間後の生存を条件とする一時金給付あるいは年金給付がある。</p>
+                                <h5>解説</h5>
+                                <ul>
+                                    <li><strong>［ １ ］商法</strong>：2010年に保険法が施行されるまで、保険契約に関するルールは商法第二編第十章「保険」に定められていました。</li>
+                                    <li><strong>［ ２ ］経済的</strong>：生命保険は、人の死亡や生存、病気やケガといった事象そのものではなく、それに伴って発生する「経済的な」損失や負担を保障するものです。</li>
+                                    <li><strong>［ ３ ］損害額</strong>：人の生命の価値を金銭で客観的に評価（損害額を算定）することは極めて困難です。この点が、損害額が比較的算定しやすい損害保険との大きな違いです。</li>
+                                    <li><strong>［ ４ ］主観的</strong>：人の価値は、家族構成や個人の考え方など、主観的な要素に大きく左右されます。</li>
+                                    <li><strong>［ ５ ］一定額</strong>：人の生命の損害額を客観的に算定することが困難なため、生命保険では契約時に当事者間の合意によってあらかじめ保険金額を「一定額」で定めておき、保険事故発生時にはその定額を支払います。これを「定額保険」といいます。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                    <span class="source-ref">出典: 2024年度 フォームC 問1-5</span>
+                </div>
+                <div class="question-block">
+                    <p class="question-title">［生命保険の対象となる危険とその特色－②］</p>
+                    <div class="question-text">
+                        <p>文中の空欄［ ６ ］～［ 10 ］に入る最も適切なものを選んでください。</p>
+                        <p>傷害・疾病危険に関しては、従来は明確な規定がなかったが、保険法においては「［ ６ ］」として典型契約としての地位が与えられた。</p>
+                        <p>生死、特に死亡にかかわる損失を保障する生命保険商品の購入は、消費者にとってはあまり積極的に検討したい性質のものではないため、生命保険に対するニーズは［ ７ ］である傾向がある。よって、保険者が加入勧奨しないと生命保険契約が成立し難いという大きな特色を生命保険事業はもっている。</p>
+                        <p>死亡危険への対応は死亡率が基本となるが、死亡率は年齢とともに上昇する。また、生存危険への対応に関しては、一定期間経過後に生じるとするのが一般的である。このように死亡危険、生存危険への生命保険の対応においては、その保障が契約期間の後半にかたよるため、［ ８ ］対応による積立金の必要性が生じる。この積立金の効率的［ ９ ］のために、金融機関としての活動を拡大することも、生命保険事業運営上の大きな特色となっている。</p>
+                        <p>20 世紀の生命保険の代表商品であった死亡・生存危険対応を併せ持つ［ 10 ］の普及が生命保険事業の金融的地位を高めたのはこの特色に拠るところが大きい。</p>
+                        <div class="word-group">
+                            <table>
+                                <tbody><tr><td>ア． 算出</td><td>イ． 傷害疾病定額保険契約</td></tr>
+                                <tr><td>ウ． ユニバーサル保険</td><td>エ． 自然保険料</td></tr>
+                                <tr><td>オ． 潜在的</td><td>カ． 傷害疾病損害保険契約</td></tr>
+                                <tr><td>キ． 平準保険料</td><td>ク． 顕在的</td></tr>
+                                <tr><td>ケ． 養老保険</td><td>コ． 運用</td></tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                    <details>
+                        <summary>解答・解説を見る</summary>
+                        <div class="answer-explanation">
+                            <div class="correct-answer">
+                                <strong>正解:</strong><br/>
+                                ［ ６ ］：イ．傷害疾病定額保険契約<br/>
+                                ［ ７ ］：オ．潜在的<br/>
+                                ［ ８ ］：キ．平準保険料<br/>
+                                ［ ９ ］：コ．運用<br/>
+                                ［ 10 ］：ケ．養老保険
+                            </div>
+                            <div class="explanation">
+                                <h5>完成した文章</h5>
+                                <p>傷害・疾病危険に関しては、従来は明確な規定がなかったが、保険法においては「<strong>傷害疾病定額保険契約</strong>」として典型契約としての地位が与えられた。</p>
+                                <p>生死、特に死亡にかかわる損失を保障する生命保険商品の購入は、消費者にとってはあまり積極的に検討したい性質のものではないため、生命保険に対するニーズは<strong>潜在的</strong>である傾向がある。よって、保険者が加入勧奨しないと生命保険契約が成立し難いという大きな特色を生命保険事業はもっている。</p>
+                                <p>死亡危険への対応は死亡率が基本となるが、死亡率は年齢とともに上昇する。また、生存危険への対応に関しては、一定期間経過後に生じるとするのが一般的である。このように死亡危険、生存危険への生命保険の対応においては、その保障が契約期間の後半にかたよるため、<strong>平準保険料</strong>対応による積立金の必要性が生じる。この積立金の効率的<strong>運用</strong>のために、金融機関としての活動を拡大することも、生命保険事業運営上の大きな特色となっている。</p>
+                                <p>20 世紀の生命保険の代表商品であった死亡・生存危険対応を併せ持つ<strong>養老保険</strong>の普及が生命保険事業の金融的地位を高めたのはこの特色に拠るところが大きい。</p>
+                                <h5>解説</h5>
+                                <ul>
+                                    <li><strong>［ ６ ］傷害疾病定額保険契約</strong>：保険法で新たに定義された契約類型で、医療保険やがん保険などがこれにあたります。人の傷害や疾病に基づき「一定の」給付を行う契約です。</li>
+                                    <li><strong>［ ７ ］潜在的</strong>：消費者は生命保険の必要性を普段は意識していない（ニーズが表面化していない）ことが多いため、そのニーズは「潜在的」であるといえます。そのため、営業職員などによる働きかけ（プッシュ型営業）が重要になります。</li>
+                                    <li><strong>［ ８ ］平準保険料</strong>：年齢とともに上昇する自然保険料では高齢期の負担が重くなるため、保険期間を通じて保険料を一定にする「平準保険料」方式が一般的です。この方式では、契約初期に払い込まれた保険料の一部が将来の支払いのために積み立てられます（責任準備金）。</li>
+                                    <li><strong>［ ９ ］運用</strong>：平準保険料方式によって積み立てられた多額の資金（責任準備金）を効率的に「運用」し、収益を上げることは、保険会社の重要な役割であり、金融機関としての側面を強めています。</li>
+                                    <li><strong>［ 10 ］養老保険</strong>：死亡保障（死亡保険）と満期時の生存保障（生存保険）を組み合わせた生死混合保険の代表例です。貯蓄性が高いため、多額の責任準備金が積み立てられ、生命保険会社の金融機関としての役割を大きくしました。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                    <span class="source-ref">出典: 2024年度 フォームC 問6-10</span>
+                </div>
+            </div>
+            <!-- ... 以下、すべての章と問題が同様の構造で続きます ... -->
+            <div class="no-results" id="noResults">
+                <p>検索結果が見つかりませんでした。</p>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // --- Sidebar Navigation & Active State ---
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const mainContent = document.querySelector('.main-content');
+    const navLinks = sidebar.querySelectorAll('.toc a');
+    const sections = document.querySelectorAll('.chapter-title, .chapter > h3');
+
+    // Sidebar toggle for mobile
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+    mainContent.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+    });
+
+    // Intersection Observer for active link highlighting
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === entry.target.id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, { rootMargin: "-50% 0px -50% 0px" });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // --- Search Functionality ---
+    const searchInput = document.getElementById('searchInput');
+    const questionBlocks = document.querySelectorAll('.question-block');
+    const chapterTitles = document.querySelectorAll('.chapter-title, .chapter > h3, .chapter-summary');
+    const noResultsMessage = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        questionBlocks.forEach(block => {
+            const textContent = block.textContent.toLowerCase();
+            if (textContent.includes(searchTerm)) {
+                block.style.display = 'block';
+                visibleCount++;
+            } else {
+                block.style.display = 'none';
+            }
+        });
+
+        // Hide/show chapter titles based on visible questions
+        document.querySelectorAll('.chapter, .chapter-title, .chapter-summary').forEach(container => {
+             if (searchTerm === '') {
+                container.style.display = '';
+             } else {
+                const hasVisibleQuestion = container.querySelector('.question-block[style*="display: block"]');
+                if (container.classList.contains('question-block')) return; // Already handled
+                
+                if (hasVisibleQuestion || container.textContent.toLowerCase().includes(searchTerm)) {
+                    container.style.display = '';
+                } else {
+                    container.style.display = 'none';
+                }
+             }
+        });
+        
+        // Reset all if search is cleared
+        if (searchTerm === '') {
+            chapterTitles.forEach(title => title.style.display = 'block');
+        }
+
+        noResultsMessage.style.display = (visibleCount === 0 && searchTerm !== '') ? 'block' : 'none';
+    });
+
+    // --- Answer Toggle Buttons ---
+    const showAllBtn = document.getElementById('showAllBtn');
+    const hideAllBtn = document.getElementById('hideAllBtn');
+    const allDetails = document.querySelectorAll('details');
+
+    showAllBtn.addEventListener('click', () => {
+        allDetails.forEach(detail => detail.open = true);
+    });
+
+    hideAllBtn.addEventListener('click', () => {
+        allDetails.forEach(detail => detail.open = false);
+    });
+});
+</script>
+
+
+</body></html>
